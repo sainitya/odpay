@@ -1,0 +1,39 @@
+<html>
+<head></head>
+<body>
+
+<h3>TRANSFER</h3>
+Transfer $ <input type="text" name="amt" size="5"> from
+
+<select name="from">
+<?php
+foreach ($accounts as $a) {
+    echo "<option value=\"" . $a['id'] . "\">" . $a['label'] . "</option>";    
+}
+?>
+</select>
+
+to
+
+<select name="to">
+<?php
+foreach ($accounts as $a) {
+    echo "<option value=\"" . $a['id'] . "\">" . $a['label'] . "</option>";    
+}
+?>
+</select>
+
+<input type="submit" name="submit" value="Transfer">
+
+</form>
+
+<h3>ACCOUNT BALANCES</h3>
+<table border=1>
+<?php
+foreach ($accounts as $a) {
+    echo "<tr><td>" . $a['label'] . "</td><td>" . $a['balance'] . "</td></tr>";    
+}
+?>
+</table>
+</body>
+</html>
